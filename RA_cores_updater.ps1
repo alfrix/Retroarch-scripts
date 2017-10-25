@@ -30,8 +30,8 @@ if ($(Test-Path "$cores_path\.timestamps.new"))
 	for ($i=0; $i -lt $cores.Count; $i++) {
 		if (-not($cores[$i].name.Contains("_libretro"))) {continue}
 		$corename=$cores[$i].name
-		$timestamp_old=$(Get-Content .\.timestamps.old | Select-String -simplematch $corename)
-		$timestamp_new=$(Get-Content .\.timestamps.new | Select-String -simplematch $corename)
+		$timestamp_old=$(Get-Content "$cores_path\.timestamps.old" | Select-String -simplematch $corename)
+		$timestamp_new=$(Get-Content "$cores_path\.timestamps.new"| Select-String -simplematch $corename)
 		$current_timestamp=$timestamp_new.ToString($timestamp_new).Split(" ")[0]
 		if ( "$timestamp_new" -eq "$timestamp_old" )
 		{
