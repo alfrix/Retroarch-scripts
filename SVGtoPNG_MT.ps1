@@ -1,7 +1,9 @@
 # Alfrix 2017
 # 
 # Batch Convert SVG to PNG
-[int]$jobs=8
+#[int]$jobs=8
+[int]$jobs=gwmi win32_computersystem | select -expand NumberOfLogicalProcessors
+
 [string]$input_folder="C:\Users\Alfre\AppData\Roaming\RetroArch\assets\xmb\custom\svg"
 [string]$output_folder="C:\Users\Alfre\AppData\Roaming\RetroArch\assets\xmb\custom\png"
 $StartTime = $(get-date)
