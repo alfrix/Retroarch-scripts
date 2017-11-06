@@ -4,7 +4,7 @@ cls
 ##
 ### Carpeta con roms
 
-$rom_path="D:\Documents\Descargas\No-intro"
+$rom_path="G:\Emuladores\ROMS"
 
 ###
 ##
@@ -87,8 +87,8 @@ limpiar "\MAME\Arcade - Lightgun" "Arcade - Lightgun"
 limpiar "\N64" "Nintendo - Nintendo 64"
 limpiar "\GBA" "Nintendo - Game Boy Advance"
 limpiar "\GENESIS" "Sega - Mega Drive - Genesis"
-#limpiar "\fgc-NES" "Nintendo - Nintendo Entertainment System"
-#limpiar "\fgc-SNES" "Nintendo - Super Nintendo Entertainment System"
+limpiar "\NES" "Nintendo - Nintendo Entertainment System"
+limpiar "\SNES" "Nintendo - Super Nintendo Entertainment System"
 
 echo "Finished"
 sleep 4

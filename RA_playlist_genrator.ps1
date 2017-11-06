@@ -6,7 +6,7 @@ cls
 
 # Location variables
 
-$assets_path="$env:appdata\retroarch\assets\xmb\monochrome\png"
+$assets_path="$env:appdata\retroarch\assets\xmb\custom\png"
 $playlist_path="$env:appdata\retroarch\playlists"
 $systems = Get-ChildItem $assets_path -File *.png
 
@@ -15,7 +15,7 @@ mkdir "$playlist_path\all" -force
 for ($i=0; $i -lt $systems.Count; $i++) {
 
 	# the assets that have -content contain the name of the system
-	if (-not($systems[$i].name.Contains("-content"))) {continue}
+	if (-not($systems[$i].name.Contains("-content.png"))) {continue}
 	if ($systems[$i].name.Contains("favorites")) {continue}
 	
 	$systemname=$systems[$i].basename

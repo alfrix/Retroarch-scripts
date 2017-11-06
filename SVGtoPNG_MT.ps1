@@ -1,9 +1,9 @@
 # Alfrix 2017
 # 
 # Batch Convert SVG to PNG
-[int]$jobs=4
-[string]$input_folder="D:\Documents\Github\Retrosystem-retroarch-theme\svg"
-[string]$output_folder="D:\Documents\Github\Retrosystem-retroarch-theme\png"
+[int]$jobs=8
+[string]$input_folder="C:\Users\Alfre\AppData\Roaming\RetroArch\assets\xmb\custom\svg"
+[string]$output_folder="C:\Users\Alfre\AppData\Roaming\RetroArch\assets\xmb\custom\png"
 $StartTime = $(get-date)
 echo ""
 Write-Host "Converting SVG to PNG" -ForegroundColor Green
