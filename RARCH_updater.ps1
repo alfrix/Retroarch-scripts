@@ -12,7 +12,7 @@ Start-BitsTransfer -Source $buildbot/RetroArch.7z -Destination $env:temp -Transf
 # Check if downloaded
 if ($(Test-Path "$env:temp\RetroArch.7z"))
 {
-	& 'C:\Program Files\7-Zip\7z.exe' x "$env:temp\RetroArch.7z" -o$rarch_location -y
+	& 'C:\Program Files\7-Zip\7z.exe' x "$env:temp\RetroArch.7z" -o"$rarch_location" -y
 	rm $env:temp\RetroArch.7z
 }
 else
