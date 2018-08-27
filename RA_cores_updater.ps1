@@ -21,7 +21,8 @@ Start-BitsTransfer -Source $cores_url/.index-extended -Destination $cores_path\.
 # Check if downloaded
 if ($(Test-Path "$cores_path\.timestamps.new"))
 {
-
+   # Make space because the progress-bar covers things up
+   for ($i=0; $i -lt 10; $i++) {Write-Host "."}
 	# New logfile entry
 	echo "-- $(date) --" >> "$logfile"
 
@@ -35,7 +36,7 @@ if ($(Test-Path "$cores_path\.timestamps.new"))
 		$current_timestamp=$timestamp_new.ToString($timestamp_new).Split(" ")[0]
 		if ( "$timestamp_new" -eq "$timestamp_old" )
 		{
-			Write-Host $current_timestamp,"SKIPPED ",$corename -ForegroundColor Gray
+			#Write-Host $current_timestamp,"SKIPPED ",$corename -ForegroundColor Gray
 			Write-output $current_timestamp`t"SKIPPED "`t$corename >> $logfile
 			continue
 		}
@@ -46,7 +47,7 @@ if ($(Test-Path "$cores_path\.timestamps.new"))
 		# Check if downloaded
 		if ($(Test-Path $cores_path\$corename.zip))
 		{
-			rm $corename
+			rm "$cores_path\$corename"
 			Expand-Archive "$cores_path\$corename.zip" "$cores_path" -force
 			rm "$cores_path\$corename.zip"
 				
